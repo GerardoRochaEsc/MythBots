@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
+
+/* Global color variables */
+:root{
+    --clr-main:#eb8110;
+    --clr-main-dark:#ad5f0b;
+    --clr-white:#ececec;
+    --clr-gray:#e2e2e2;
+    --clr-black:#040303;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Removing the default markers ° for the lists */
+ul {
+    list-style-type: none;
+}
+
+/* Removing the default underlining for url */
+a {
+    text-decoration: none;
+}
+
+/*index.hmtl css code*/
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--clr-main);
+}
