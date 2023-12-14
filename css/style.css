@@ -1,19 +1,26 @@
+/* Importing Robotik's font */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
 
 /* Global color variables */
 :root{
-    --clr-main:#eb8110;
-    --clr-main-dark:#ad5f0b;
+    --clr-main:#3410ab;
+    --clr-main-dark:#9c82f4;
     --clr-white:#ececec;
     --clr-gray:#e2e2e2;
-    --clr-black:#040303;
+    --clr-red:#961818;
 }
 
+/* Global selector indicator for the margin/padding, border and font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+    margin: 0;
+    padding: 0;
 }
 
 /* Removing the default markers ° for the lists */
@@ -27,8 +34,284 @@ a {
 }
 
 /*index.hmtl css code*/
-.container{
+.wrapper{
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: var(--clr-main);
+}
+/* Left side menu bar design */
+aside{
+    padding: 2rem;
+    padding-right: 0;
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Right part of the page, including tittle "All products"
+and buttons  */
+/* Displays a grid (display:flex) in a vertical/column way using (flex-direction:column),
+gap works giving space between the grills */
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* .button-menu design and configuration.
+(cursor: pointer) makes the mouse pointer a gauntlet for selection */
+.button-menu{
+    background-color:transparent;
+    border: 0;
+    color: var(--clr-white); 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+/* Configuration for the white bar indicator of which .button-menu
+is active */
+.button-menu.active{
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+
+/* Both of these configuration were created to give a border to the .button-menu-active,
+here we use a box shadow  with an absolute position related to .button-menu-active */
+.button-menu.active::before{
+    content: "";
+    position: absolute;
+    height: 2rem;
+    width: 1rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+.button-menu.active::after{
+    content: "";
+    position: absolute;
+    height: 2rem;
+    width: 1rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+/* Here I am rotating the hand pointing icons to the right 90° */
+.button-menu > i.bi-hand-index-thumb-fill,
+.button-menu > i.bi-hand-index-thumb{
+    transform: rotate(90deg);
+}
+
+/* JetShop aspects */
+.logo{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+/* Shooping cart button aspects */
+.button-cart{
+    margin-top: 1rem;
+}
+
+/* Indicator <span> that indicates hm objects you have in the cart */
+.number{
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+}
+
+/* © 2023 JetShop Design */
+.footer-text{
+    color:var(--clr-main-dark);
+    font-size: 0.85rem;
+    
+}
+
+/* Object grills design */
+main{
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+/* All the product (tittle design) */
+.main-tittle{
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+
+/* Object container (4) using repeat */
+.product-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* Every product image */
+.product-image{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 20rem;
+    height: 20.5rem;
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+/* Name and price of every object */
+.product-details{
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Every object tittle */
+.product-tittle{
+    font-size: 1rem;
+}
+
+/* ADD button design */
+.product-added{
+    border: 0;
+    height: 40px;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .25rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color .2s, color .2s;
+}
+
+/* Hover effect */
+.product-added:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+/* Empty Cart */
+.container-cart{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Phrases for you cart is empty or thank you for your purchase */
+.cart-empty,
+.cart-purchased{
+    color: var(--clr-main);
+}
+
+/* Container for all the products */
+.cart-products{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* Individual product design */
+.cart-product{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: var(--clr-gray);
+color: var(--clr-main);
+padding: .5rem;
+padding-right: 1.5rem;
+border-radius: 1rem;
+}
+/* Individual product image */
+.cart-product-image{
+aspect-ratio: 1 / 1;
+object-fit: cover;
+width: 5rem;
+height: 6.5rem;
+border-radius: 1rem;
+}
+
+/* Tittle, Quantity, Total, Subtotal */
+.cart-product small{
+    font-size: .75rem;
+}
+/*  Individual delete button */
+.cart-product-delete{
+    border: 0;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+}
+/* Empty and buy(with total) buttons display */
+.cart-actions{
+    display: flex;
+    justify-content: space-between;
+}
+/* Empty Cart button design */
+.cart-actions-empty{
+    border: 0;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    border-radius: 1rem;
+    columns: var(--clr-main);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Total and purchase button */
+.cart-actions-right{
+    display: flex;
+}
+/* Total design */
+.cart-actions-total{
+    display: flex;
+    background-color: var(--clr-gray);
+    padding: 1rem;
+    columns: var(--clr-main);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap:1rem;
+}
+/* BUY button */
+.cart-actions-buy{
+    border: 0;
+    background-color: var(--clr-main);
+    padding: 1rem;
+    color: var(--clr-white);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+/* To dont show the hidden HTML objects */
+.disabled{
+    display: none;
 }
