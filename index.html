@@ -6,41 +6,50 @@
     <title>MythBots</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media_querys.css" />
   </head>
   <body>
     <div id="rectangle-block" class="container">
       <aside>
         <header>
           <div class="header-content">
-            <a class="logo" href="https://mythbots.com/"><img src="img/Logo-Main.svg" alt="Logo-Main">MythBots</a>
+            <div class="left-side">
+              <a class="logo" href="https://mythbots.com/"><img src="img/Logo-Main.svg" alt="Logo-Main">MythBots</a>
 
-            <div class="language-selector">
-              <button id="language-btn"><img src="img/globe-americas.svg" alt="Language"></button>
-              <ul id="language-menu">
-                <li><a href="#" onclick="changeLanguage('es')">Español</a></li>
-                <li><a href="#" onclick="changeLanguage('en')">English</a></li>
-                <!-- Agrega más idiomas según sea necesario -->
-              </ul>
+              <div class="language-selector">
+                <button id="language-btn"><img src="img/globe-americas.svg" alt="Language"></button>
+                <ul id="language-menu">
+                  <li><a href="#" onclick="changeLanguage('es')">Español</a></li>
+                  <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+                  <!-- Agrega más idiomas según sea necesario -->
+                </ul>
+              </div>
+
+              <div class="folder-selector">
+                <button id="folder-btn"><img src="img/icon-folder.svg" alt="Folder"></button>
+                <ul id="folder-menu">
+                  <li>New File</li>
+                  <li>Open File</li>
+                  <li>Save</li>
+                  <li>Save as</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="folder-selector">
-              <button id="folder-btn"><img src="img/icon-folder.svg" alt="Folder"></button>
-              <ul id="folder-menu">
-                <li>New File</li>
-                <li>Open File</li>
-                <li>Save</li>
-                <li>Save as</li>
-              </ul>
-            </div>
 
-            <div class="user-guide-selector">
-              <a class="user-guide" href="https://mythbots.com/about/"><img src="img/journal-bookmark.svg" alt="User-Guide">About us</a>
-            </div>
+            <div class="right-side">
+              <div class="user-guide-selector">
+                <a class="user-guide" href="https://mythbots.com/about/"><img src="img/journal-bookmark.svg" alt="User-Guide">About us</a>
+              </div>
 
-            <div class="certifications-selector">
-              <a class="certifications" href="https://mythbots.com/services/"><img src="img/" alt="Certifications">Certifications</a>
-            </div>
+              <div class="certifications-selector">
+                <a class="certifications" href="https://mythbots.com/services/"><img src="img/award-fill.svg" alt="Certifications">Certifications</a>
+              </div>
 
+              <div class="user-profile-selector">
+                <button class="user-profile" href=""><img src="img/person-circle.svg" alt="User"></button>
+              </div>
+            </div>
 
           </div>
         </header>
